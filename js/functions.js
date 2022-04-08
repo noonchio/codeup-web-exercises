@@ -105,10 +105,12 @@ alert(" Tip ammount " + calculateTip(billTotal, tipPercentage));
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount(price, discount){
-    return (price * discount)
+    return (1 - discount) * price
 }
 
 
-console.log(applyDiscount(100, .2));
+
+
+console.log(applyDiscount(45.99, .12));
 
 

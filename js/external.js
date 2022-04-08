@@ -36,7 +36,7 @@ var canEnroll = !isClassFull && !isThereConflict
 if(canEnroll) {
     alert('you can enroll in class.')
 } else {
-    alert ('You cannot enroll.')
+    alert ('You can not enroll.')
 }
 
 

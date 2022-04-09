@@ -94,7 +94,11 @@ var color = randomColor
 // what type of inputs?
 //what type of output?
 
-    var userInput = prompt("Choose a color")
+    //var userInput = prompt("Choose a color");
+
+    var userInput = prompt("Choose a color: ");
+    alert(analyzeColor(userInput));
+
 
 
 
@@ -127,18 +131,43 @@ var color = randomColor
             return "No Discount";
         }   else if (luckyNum === 1){
             return (1 - .1) * total;
+        }   else if (luckyNum === 2) {
+            return (1 - .25) * total;
+        }   else if (luckyNum === 3) {
+            return (1 - .35) * total;
+        }   else if (luckyNum === 4) {
+            return (1 - .50) * total;
+        }   else if (luckyNum === 5) {
+            return ("Your purchase today is FREE!")
+        }   else if (luckyNum === 0) {
+            return ("No Discount")
+        }   else {
+            return "Invalid Input"
         }
 }
-/**
- * TODO:
- * Uncomment the line below to generate a random number between 0 and 5.
- * (In this line of code, 0 is inclusive, and 6 is exclusive)
- * Prompt the user for their total bill, then use your `calculateTotal` function
- * and alerts to display to the user what their lucky number was, what their
- * price before the discount was, and what their price after the discount is.
- */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+    console.log(calculateTotal(0, 100)); "No Discount"
+    console.log(calculateTotal(4, 100)); "50"
+    console.log(calculateTotal(5, 100)); "Your purchase today is FREE!"
+    /**
+     * TODO:
+     * Uncomment the line below to generate a random number between 0 and 5.
+     * (In this line of code, 0 is inclusive, and 6 is exclusive)
+     * Prompt the user for their total bill, then use your `calculateTotal` function
+     * and alerts to display to the user what their lucky number was, what their
+     * price before the discount was, and what their price after the discount is.
+     */
+  //  Generate a random number between 0 and 6
+    var luckyNumber = Math.floor(Math.random() * 6);
+
+    var totalBill = prompt("How much was your total bill?");
+    alert("Your lucky number is: " + luckyNumber);
+    alert("Your bill before any discounts : $" + totalBill);
+    alert("Your total bill today if you qualify for any discounts: $" + calculateTotal(luckyNumber, totalBill));
+
+
+
+
 
 /**
  * TODO:
@@ -158,4 +187,23 @@ var color = randomColor
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+    var enterNum = confirm("Would you like to enter a number?")
+            if (enterNum === true) {
+                var inputEntered =prompt("Please enter a number");
+                if (inputEntered % 2 === 0){
+                    alert("The number is even.")
+                } else {
+                    alert("The number is odd.")
+                }
+                parseInt(alert(inputEntered) + 100)
+
+
+
+
+
+    }
+
+
+
 })();

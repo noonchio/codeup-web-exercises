@@ -195,15 +195,19 @@ var color = randomColor
                     alert("The number is even.")
                 } else {
                     alert("The number is odd.")
+                }   alert ("This is your number plus 100: " + (parseFloat(inputEntered) + 100))
+                if (Math.sign(inputEntered) === 1){
+                    alert("The number is positive.")
+                } else {
+                    alert("The number is negative")
                 }
-                parseInt(alert(inputEntered) + 100)
 
 
 
 
-
-    }
-
+            }
 
 
-})();
+
+
+}) ();

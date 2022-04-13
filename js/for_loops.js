@@ -43,10 +43,22 @@ for (var i = 0; i < 10; i++) {
 
 //4.
 
-
+let n = 9;
+let string = "";
+for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= i; j++) {
+        string += i;
+    }
+    string += "\n";
 }
+console.log(string);
 
+//5
 
+for(var j = 100; j > 0; j--){
+    if(j % 5 === 0)
+    console.log(j)
+}
 
 
 

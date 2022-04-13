@@ -45,7 +45,41 @@
         //     B. Log the current total  on each loop.
         //     C. Log the sum of all the incrementer values (0+1+2+3….) after the loop has completed.
 
+     //   Define a function named `isAString` that takes in a value and returns true if the input is a string, or false if the input is not a string.
+            function isASting(value) {
+                if (typeof value === "string"){
+                    return true;
+                }
+                    return false;
+            }
 
+        console.log(isASting());
+
+
+        //       Define a function named `isNotANumber` that takes in a value and returns true if the input is not a number, or false if the input is a number.
+        //    This function should consider that numeric strings are not numbers.
+            function isNotANumber(value){
+                if (typeof value === "NaN"){
+                    return true;
+                }
+                    return false;
+            }
+
+            console.log(isNotANumber());
+     //       Define a function named `canBeANumber` that takes in a value and returns true if the input is a number or a numeric string, or false if the input is not a string or if it cannot be parsed to a number.
+            function canBeANumber(value){
+                if (typeof value === "number"){
+                    return true;
+                }
+                    return false;
+            }
+     //       Define a function named `multiplyByTen` that takes in a value, multiplies it by ten, and returns the result. If the input is not a number and is not a numeric string, it returns false.
+
+     //       Write a function named `randomNumber` that takes in an input and returns a random number between zero and the value of the input.
+
+     //       Write a function that takes in a string and returns the length of the string. If the input is not a string, it should be converted to a string and still return the length of the string.
+
+     //       Write a function that takes in two strings. The second string should be a single character. The function should return the index of the second input in the first input. If the second input is more than one character or is not in the first input at all, it should return false.
 
 
 

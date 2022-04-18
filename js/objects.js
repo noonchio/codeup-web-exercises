@@ -11,10 +11,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-        const person = {
+        var person = {
             firstName: 'Alfredo',
             lastName: 'Oviedo'
     };
+    // console.log(person.firstName);
+    // console.log(person.firstName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -24,7 +26,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+        person.sayHello = function() {
+            return ('Hello from ' + person.firstName +' ' + person.lastName + '!')
+        }
+    console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -39,11 +44,27 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(shopper){
+        // console.log(shopper.name);
+        // console.log(shopper.amount);
+       var discount = (shopper.amount * .12)
+        // (shopper.amount - discount)
+        if (shopper.amount < 200) {
+            console.log('NO DISCOUNT FOR YOU' + shopper.name)
+        } else {
+            console.log(shopper.name, shopper.amount, discount, shopper.amount - discount )
+        }
+
+    });
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -57,7 +78,48 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+        var book1 = {
+            title: 'Hector and the Search of Happiness',
+            author: {
+                firstName: 'Francois',
+                lastName: 'Lelord'
+            }
+    }
 
+    var book2 = {
+        title: 'War and Peace',
+        author: {
+            firstName: 'Leo',
+            lastName: 'Tolstoy'
+        }
+    }
+
+    var book3 = {
+        title: 'North',
+        author: {
+            firstName: 'Scott',
+            lastName: 'Jurek'
+        }
+    }
+
+    var book4 = {
+        title: 'Sapiens',
+        author: {
+            firstName: 'Yuval Noah',
+            lastName: 'Harari'
+        }
+    }
+
+    var book5 = {
+        title: 'Who Rules the World?',
+        author: {
+            firstName: 'Noam',
+            lastName: 'Chomsky'
+        }
+    }
+
+    var books = [book1, book2, book3, book4, book5]
+        console.log(books)
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -82,7 +144,11 @@
      *      ---
      *      ...
      */
-
+        for(var i = 0; i < books.length; i++) {
+            console.log('Book # ' + (i + 1))
+            console.log(books[i].title)
+            console.log(books[i].author.firstName + ' '+ books[i].author.lastName)
+        }
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author

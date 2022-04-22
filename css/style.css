@@ -1,3 +1,23 @@
-.fancy-header { color: blue;
+.fancy-header { color:purple;
     text-decoration: underline;
+}
+h1 {text-align: center;}
+
+body{
+    background-color: lightblue ;
+}
+
+body{
+    font-family: Courier
+}
+
+ table, th, td {
+     padding-top: 10px;
+     padding-bottom: 20px;
+     padding-left: 30px;
+     padding-right: 40px;
+}
+
+table {
+    border-spacing: 20px;
 }

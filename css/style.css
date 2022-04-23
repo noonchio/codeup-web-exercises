@@ -21,3 +21,25 @@ body{
 table {
     border-spacing: 20px;
 }
+
+p {
+    border: 2px solid powderblue;
+}
+
+h1 {
+    animation-duration: 8s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: 0%;
+    }
+    50% {
+        margin-left: 300px;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}

@@ -136,71 +136,163 @@
     //  * console.log(unpavedTotalDis(trails));
     //  * Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
     //
+    //
+    // function rollDice(max) {
+    //     return Math.floor(Math.random() * max) + 1;
+    // }
+    //
+    // console.log(rollDice(6));
+    //
+    // function returnTwo(){
+    //     return 2
+    // }
+    //
+    // console.log(returnTwo());
+    //
+    // function sayHowdy() {
+    //     return "Howdy!"
+    // }
+    //
+    // console.log(sayHowdy());
+    //
+    // function returnName() {
+    //     return "Alfredo"
+    // }
+    //
+    // console.log(returnName());
+    //
+    // function addThree(input) {
+    //     return input + 3
+    // }
+    //
+    // console.log(addThree(5));
+    //
+    // function sayString(str) {
+    //     return str
+    // }
+    //
+    // console.log(sayString('codeup'));
+    //
+    // function identity(input) {
+    //     return input
+    // }
+    //
+    // console.log(identity('dog'));
+    //
+    // function getRandomNumber(min, max) {
+    //     return Math.floor(Math.random() * max) + min
+    // }
+    // console.log(getRandomNumber(1, 10))
+    //
+    // function first(input) {
+    //     return input.charAt(0)
+    // }
+    // console.log(first('dog'))
+    //
+    // function last(input) {
+    //     return input.charAt(input.length -1)
+    // }
+    //
+    // console.log(last('dog'));
+    //
+    // function rest(input) {
+    //     return input.substring(1)
+    // }
+    //
+    // console.log(rest('dog'));
 
-    function rollDice(max) {
-        return Math.floor(Math.random() * max) + 1;
+    function reverse(input) {
+        var splitInput = input.split('')
+        var reverseStr = splitInput.reverse()
+        var result = reverseStr.join('')
+        return result
+
     }
 
-    console.log(rollDice(6));
+    console.log(reverse('puppy'));
 
-    function returnTwo(){
-        return 2
+    // program to reverse a string
+
+    // function reverseString(str) {
+    //
+    //     // empty string
+    //     let newString = "";
+    //     for (let i = str.length - 1; i >= 0; i--) {
+    //         newString += str[i];
+    //     }
+    //     return newString;
+    // }
+    //
+    // // take input from the user
+    // const string = prompt('Enter a string: ');
+    //
+    // const result = reverseString(string);
+    // console.log(result);
+
+        function isNumeric(input) {
+            if (typeof input === 'number')
+                return true;
+        }
+
+    console.log(isNumeric());
+
+        function count(input) {
+            return input.length
+        }
+
+    console.log(count('puppychino'));
+
+        function add(a, b) {
+            return a + b
+        }
+
+    console.log(add(1, 1));
+
+        function subtract(x, y) {
+            return x - y
+        }
+
+    console.log(subtract(8, 4));
+
+        function multiply(g, h) {
+            return g * h
+        }
+
+    console.log(multiply(2, 4));
+
+        function divide(num, den) {
+            return num / den
+        }
+
+    console.log(divide(10, 2));
+
+        function remainder(t, y) {
+            return t % y
+        }
+
+    console.log(remainder(200, 43));
+
+        function square(a) {
+            return a * a
+        }
+
+    console.log(square(5));
+
+    function sumofSquares(numA, numB) {
+      var a1 = square(numA)
+      var b2 = square(numB)
+      var result = add(a1, b2)
+        return result
+
     }
 
-    console.log(returnTwo());
+    console.log(sumofSquares(3, 3));
 
-    function sayHowdy() {
-        return "Howdy!"
+    function doMath(op, a, b) {
+        return op(a, b)
     }
 
-    console.log(sayHowdy());
-
-    function returnName() {
-        return "Alfredo"
-    }
-
-    console.log(returnName());
-
-    function addThree(input) {
-        return input + 3
-    }
-
-    console.log(addThree(5));
-
-    function sayString(str) {
-        return str
-    }
-
-    console.log(sayString('codeup'));
-
-    function identity(input) {
-        return input
-    }
-
-    console.log(identity('dog'));
-
-    function getRandomNumber(min, max) {
-        return Math.floor(Math.random() * max) + min
-    }
-    console.log(getRandomNumber(1, 10))
-
-    function first(input) {
-        return input.charAt(0)
-    }
-    console.log(first('dog'))
-
-    function last(input) {
-        return input.charAt(input.length -1)
-    }
-
-    console.log(last('dog'));
-
-    function rest(input) {
-        return input.substring(1)
-    }
-
-    console.log(rest('dog'));
-
+    console.log(doMath(Math.max, 1, 10));
 
 
 </script>

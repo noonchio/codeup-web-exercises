@@ -1,14 +1,14 @@
-.fancy-header { color:purple;
+.fancy-header { color:rebeccapurple;
     text-decoration: underline;
 }
 h1 {text-align: center;}
 
 body{
-    background-color: lightblue ;
+    background-color: lightgray ;
 }
 
 body{
-    font-family: Courier
+    font-family: Futura
 }
 
  table, th, td {
@@ -54,20 +54,20 @@ body {
     justify-content: center;
 }
 
-h1 {
-    font-family: fantasy;
-    font-size: 3em;
-    border-bottom: 2px solid pink;
-    border-right: 2px solid pink;
-    width: 400px;
-    text-align: center;
-    box-shadow: 4px 4px 5px #888888;
-    margin-top: 10px;
+/*h1 {*/
+/*    font-family: fantasy;*/
+/*    font-size: 3em;*/
+/*    border-bottom: 2px solid pink;*/
+/*    border-right: 2px solid pink;*/
+/*    width: 400px;*/
+/*    text-align: center;*/
+/*    box-shadow: 4px 4px 5px #888888;*/
+/*    margin-top: 10px;*/
 }
 
 img {
     width: 450px;
-    hight: 450px;
+    height: 450px;
     margin: 10px;
     transition: all 1s;
 }

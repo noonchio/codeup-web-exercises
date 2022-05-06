@@ -471,11 +471,91 @@
     //         }
     //     }
 
+    //     ================================= WARM UP
+    //
+    // Consider an array of product objects:
+
+        const products = [
+            {
+                name: 'Hammer',
+                priceInCents: 4500,
+                isInStock: true
+            },
+            {
+                name: 'Computer',
+                priceInCents: 45000,
+                isInStock: true
+            },
+            {
+                name: 'Water Bottle',
+                priceInCents: 3300,
+                isInStock: true
+            },
+            {
+                name: 'Car',
+                priceInCents: 990000,
+                isInStock: true
+            },
+            {
+                name: 'Cup',
+                priceInCents: 230,
+                isInStock: false
+            },
+            {
+                name: 'Book',
+                priceInCents: 540,
+                isInStock: false
+            },
+        ];
+    //
+    // Create the following functions that take in an array of product objects and return various values:
+    //
+    //     returnMostExpensiveProductObjectInStock(products)
+    // returnLeastExpensiveProductObjectInStock(products)
+    // returnAveragePriceOfAllProductsInStock(products)
+    // returnProductObjectsNotInStock(products)
 
 
+    function returnMostExpensiveProductObjectInStock(products) {
+        let mostExp= 0
+        let expName;
+        products.forEach(function(product) {
+            if(product.priceInCents > mostExp) {
+                mostExp = product.priceInCents
+                expName = product.name
+            }
+        });
+        return expName;
+    }
+    console.log(returnMostExpensiveProductObjectInStock(products));
+
+    function returnLeastExpensiveProductObjectInStock(products) {
+        let a;
+
+        for (let i = 0; i < products.length; i++){
+            if(products[i].isInStock === true){
+                a = products.name
+
+            }
+        }
+            return a
 
 
+    }
+    console.log(returnLeastExpensiveProductObjectInStock(products));
 
+    function returnProductObjectsNotInStock(products) {
+
+        products.forEach(function(product){
+            if (product.isInStock === false) {
+                console.log(product.name )
+            }
+
+        })
+
+    }
+
+    console.log(returnProductObjectsNotInStock(products));
 </script>
 </body>
 </html>

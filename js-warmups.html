@@ -514,48 +514,109 @@
     // returnLeastExpensiveProductObjectInStock(products)
     // returnAveragePriceOfAllProductsInStock(products)
     // returnProductObjectsNotInStock(products)
-
-
-    function returnMostExpensiveProductObjectInStock(products) {
-        let mostExp= 0
-        let expName;
-        products.forEach(function(product) {
-            if(product.priceInCents > mostExp) {
-                mostExp = product.priceInCents
-                expName = product.name
-            }
-        });
-        return expName;
-    }
-    console.log(returnMostExpensiveProductObjectInStock(products));
-
+    //
+    //
+    // function returnMostExpensiveProductObjectInStock(products) {
+    //     let mostExp= 0
+    //     let expName;
+    //     products.forEach(function(product) {
+    //         if(product.priceInCents > mostExp && product.isInStock === true) {
+    //             mostExp = product.priceInCents
+    //             expName = product.name
+    //         }
+    //     });
+    //     return expName;
+    // }
+    // console.log(returnMostExpensiveProductObjectInStock(products));
+    // //
+    // // function returnLeastExpensiveProductObjectInStock(products) {
+    // // }
+    //
+    // function returnAveragePriceOfAllProductsInStock(products) {
+    //     let total = 0;
+    //     products.forEach(function(element) {
+    //         total += element.priceInCents;
+    //     })
+    //     return total/products.length;
+    // }
+    //
+    // console.log(returnAveragePriceOfAllProductsInStock(products));
+    //
+    //
+    // function returnProductObjectsNotInStock(products) {
+    //     let outStock = []
+    //     products.forEach(function(product){
+    //         if (product.isInStock === false){
+    //             outStock.push(product.name)
+    //         }
+    //     })
+    //     return outStock
+    // }
+    // console.log(returnProductObjectsNotInStock(products));
+    //
     function returnLeastExpensiveProductObjectInStock(products) {
-        let a;
-
-        for (let i = 0; i < products.length; i++){
-            if(products[i].isInStock === true){
-                a = products.name
-
+        let lowest = products[0].priceInCents
+        let nameOfLowest;
+        products.forEach(function(element) {
+            if (element.priceInCents < lowest && element.isInStock === true) {
+                lowest = element.priceInCents
+                nameOfLowest = element.name
             }
-        }
-            return a
-
-
+        })
+        return nameOfLowest;
     }
+
     console.log(returnLeastExpensiveProductObjectInStock(products));
 
-    function returnProductObjectsNotInStock(products) {
 
-        products.forEach(function(product){
-            if (product.isInStock === false) {
-                console.log(product.name )
-            }
+    const car = {  make: 'Ford',  model: 'Fiesta',  color: 'Red'};
 
-        })
+    // console.log(car.color)
+    //
+    // console.log(car['color'])
 
-    }
 
-    console.log(returnProductObjectsNotInStock(products));
+
+    //
+    // function getPrice(itemName){  if(itemName === 'burger') {    return 10;  } else if(itemName === 'fries') {    return 3;  } else if(itemName === 'coleslaw') {    return 4;  } else if(itemName === 'coke') {    return 2;  } else if(itemName === 'beer') {    return 5;  }}
+    //
+    //
+    //
+    // const menu = {  burger: 10,  fries: 3,  coleslaw: 4,  coke: 2,  beer: 5};
+    //
+    // const priceOfBurger = getPrice('burger', menu);console.log(priceOfBurger)
+    //
+    //
+    // const books = [{  isbn: '978-0099540946',  author: 'Mikhail Bulgakov',  title: 'Master and Margarita'}, {  isbn: '978-0596517748',  author: 'Douglas Crockford',  title: 'JavaScript: The Good Parts'}, {  isbn: '978-1593275846',  author: 'Marijn Haverbeke',  title: 'Eloquent JavaScript'}];
+    //
+    // function getBookByIsbn(isbn, books){
+    //     for(let i = 0; i < books.length; i++){
+    //         if(books[i].isbn === isbn) {
+    //             return books[i].title;    }  }}
+    //
+    // console.log(getBookByIsbn('978-1593275846', books));
+
+    // MAP LOOK UP!!!
+
+
+    const books = {  '978-0099540946':{    isbn: '978-0099540946',    author: 'Mikhail Bulgakov',    title: 'Master and Margarita'  },  '978-0596517748': {    isbn: '978-0596517748',    author: 'Douglas Crockford',    title: 'JavaScript: The Good Parts'  },  '978-1593275846': {    isbn: '978-1593275846',    author: 'Marijn Haverbeke',    title: 'Eloquent JavaScript'  }};
+
+    function getBookByIsbn(isbn, books){  return books[isbn];}
+
+
+    const myBook = getBookByIsbn('978-1593275846', books);
+
+    console.log(myBook);
+
+    // We have also learned that a map datastructure maps keys to values. We can use keys to directly look up values in a map which we implement using an object.
+
+    // We had a first glance at how algorithm performance is described using Big O notation. In addition, we saw how we can improve the performance of a search by converting an array of objects into a map and using direct lookup rather than iteration.
+
+
+
+
+
+
 </script>
 </body>
 </html>

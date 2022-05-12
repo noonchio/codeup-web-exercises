@@ -649,40 +649,294 @@
     // console.log(acceptArr([3, 5, 7, 10, 0]));
     // console.log(acceptArr([0, 3, 5, 6, 21]));
 
+    // # JavaScript Loops, Arrays, and Objects Assessment
+    // ## Main Concepts to be Assessed
+    // - JavaScript Primitive Types
+    // - JavaScript Operators
+    // - JavaScript Variables
+    // - JavaScript Functions
+    // - JavaScript Conditionals
+    // - JavaScript Loops
+    // - JavaScript Arrays
+    // - Manipulating JavaScript Arrays
+    // - JavaScript Objects
+    // - The Math Object in JavaScript
+    // - Writing Code That Passes Pre-written Tests in Jasmine.
+    // ## Skills Not Currently Being Assessed
+    // - Writing Tests in Jasmine
+    // - Browser Object Model
+    // - Document Object Model
+    // - Use of the Mapbox API
+    // ## JavaScript Loops, Arrays, and Objects Checklist
+    // The following are several points of competency and skill that are intended to help identify areas of additional practice and study. Not all answers are found in the Codeup curriculum.
+    // ### Knowledge
+    // In addition to the concepts from the previous assessment,
+    //     - [ ] I can differentiate between the various loops of JavaScript.
+
+    // - [ ] I can identify the use case for break and continue in loops.
+    // - [ ] I can identify an array in JavaScript.
+    // - [ ] I know how to iterate through an array in JavaScript.
+    // https://www.geeksforgeeks.org/ways-iterating-array-javascript/
+    // - [ ] I know the various methods that can be used to manipulate an array.
+    // https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/
+    // - [ ] I know the various parts of an object in JavaScript.
+
+    // - [ ] I have familiarized myself with the Math object, and its various methods and properties.
+    // ### Skills
+    // In addition to the skills from the previous assessment,
+    //     - [ ] I can write code in a looping structure based on a condition.
+    // - [ ] I can write code that will stop a loop.
+    // - [ ] I can create an array in JavaScript.
+    // check https://www.w3schools.com/js/js_arrays.asp
+    // - [ ] I can access a single piece of information from an array in JavaScript.
+        //create an array like so:
+        var colors = ["red","blue","green"];
+
+    you can loop through an array like this:
+    for (var i = 0; i < colors.length; i++) {
+        console.log(colors[i]);
+    }
+
+    console.log(colors[0])
+
+    // - [ ] I can navigate through an array, and access all piece of information individually.
+    // - [ ] I can add and remove information from an array.
+    // - [ ] I can change the order of information in an array.
+    // - [ ] I can convert between an array and string in JavaScript.
+
+    // - [ ] I can create and use objects in JavaScript.
+    // - [ ] I can add methods and properties to objects in JavaScript.
+    // - [ ] I know how to use the methods and properties from an object in JavaScript.
+
+ //
+ // function showMultiplicationTable (num) {
+ //     console.log(`${num} * ${1} = ${num * 1}`)
+ //     console.log(`${num} * ${2} = ${num * 2}`)
+ //     console.log(`${num} * ${3} = ${num * 3}`)
+ //     console.log(`${num} * ${4} = ${num * 4}`)
+ //     console.log(`${num} * ${5} = ${num * 5}`)
+ //     console.log(`${num} * ${6} = ${num * 6}`)
+ //     console.log(`${num} * ${7} = ${num * 7}`)
+ //     console.log(`${num} * ${8} = ${num * 8}`)
+ //     console.log(`${num} * ${9} = ${num * 9}`)
+ //     return (`${num} * ${10} = ${num * 10}`)
+ // }
+ //
+ //    console.log(showMultiplicationTable(10));
+ //
+ //    // Math.floor(Math.random() * (max - min)) + min
+ //    function getRndInteger(min, max) {
+ //        return Math.floor(Math.random() * (max - min)) + min;
+ //    }
+ //
+ //    console.log(getRndInteger(20, 200));
+ //
+ //    for (let i = 0; i < 10; i++)
+
+
+    // var result;
+    // var min = 20
+    // var max = 200
+    //
+    // for(i = 0; i < 10; i++) {
+    //     result = Math.ceil(Math.random() *(max - min) + min)
+    //     if (result % 2 === 0) {
+    //         console.log(result + " is even")
+    //     } else {
+    //         (console.log(result + " is odd"))
+    //     }
+    // }
 
 
 
 
 
+    // if (result % 2 === 0) {
+    //     console.log(result + "is even")
+    // } else {
+    //     (console.log(result + "is odd"))
+    // }
+
+
+    // let classes = [
+    //     {class: "6th grade history", students: 28},
+    //     {class: "7th grade history", students: 21},
+    //     {class: "8th grade history", students: 22}
+
+
+    // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
+
+    // Bonus: instead of the total students, return the highest number of students in any class
+
+    // function calculateTotalStudents(x) {
+    //     let sum = 0
+    //     for (var i = 0; i < classes.length; i ++) {
+    //         sum += classes[i].students
+    //     }
+    //     return sum
+    // }
+    //
+    // console.log(calculateTotalStudents(classes));
+
+    // function calculateTotalStudents(x) {
+    //     let max = 0
+    //     for (var i = 0; i < classes.length; i ++) {
+    //         if (classes[i].students > max){
+    //             return max
+    //         }
+    //     }
+    //
+    // }
+    //
+    // console.log(calculateTotalStudents(classes));
+
+    // function returnMostExpensiveProductObjectInStock(x) {
+    //     let most = 0
+    //     // let mostName;
+    //     classes.forEach(function (element) {
+    //         if (element.students > most) {
+    //             most = element.students
+    //             // mostName = element.class
+    //         }
+    //     });
+    //     return most;
+    // }
+    //
+    // console.log(returnMostExpensiveProductObjectInStock(classes));
+
+
+    // let classes = [
+    //     {class: "6th grade history", students: 28},
+    //     {class: "7th grade history", students: 21},
+    //     {class: "8th grade history", students: 22}
+    // ];
+
+    //
+    // function returnMostExpensiveProductObjectInStock(x) {
+    //     let lowest = classes[0].students
+    //     // let mostName;
+    //     classes.forEach(function (element) {
+    //         if (element.students < lowest) {
+    //             lowest = element.students
+    //             // mostName = element.class
+    //         }
+    //     });
+    //     return lowest;
+    // }
+    //
+    // console.log(returnMostExpensiveProductObjectInStock(classes));
+
+
+    // function returnMostExpensiveProductObjectInStock(x) {
+    //     let most = 0
+    //     // let mostName;
+    //     classes.forEach(function (element) {
+    //         if (element.students > most) {
+    //             most = element.students
+    //             // mostName = element.class
+    //         }
+    //     });
+    //     return most;
+    // }
+    //
+    // console.log(returnMostExpensiveProductObjectInStock(classes));
+
+
+    // function calculateTotal(c) {
+    //
+    // }
+    //
+    // console.log(calculateTotal(classes));
+
+    // Write a function called convertToObject that takes in a string that is the name of a class, and a number that is the number of students, and returns an object with the properties `class` and `students`
+
+    convertToObject("Intro to Programming", 20) returns {class: "Intro to Programming", students: 20}
+
+    //
+    // function convertToObject(string, num){
+    //     return {class: sring, number: number};
+    // }
+
+
+    // function highestNum(c) {
+    //     var max = classes[0].students
+    //     for (var i = 0; i < classes.length; i++) {
+    //         if (classes[i].students > max) {
+    //             max = classes[i].students
+    //         }
+    //     }
+    //     return max
+    // }
+    //
+    // console.log(highestNum(classes));
+
+
+    // function returnMostExpensiveProductObjectInStock(x) {
+    //     let most = 0
+    //     // let mostName;
+    //     classes.forEach(function (element) {
+    //         if (element.students > most) {
+    //             most = element.students
+    //             // mostName = element.class
+    //         }
+    //     });
+    //     return most;
+    // }
+    //
+    // console.log(returnMostExpensiveProductObjectInStock(classes));
 
 
 
 
+    var neighborhood1 ={
+        neighborhood: "Lovely Estates",
+        medianHomePrice: 280000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: [
+            {name: "ES1", rating: 8},
+            {name: "MS2", rating: 6},
+            {name: "HS3", rating: 8}
+        ]
+    }
 
+    var neighborhood2 ={
+        neighborhood: "Luminous Estates",
+        medianHomePrice: 270000,
+        pool: true,
+        tennis: false,
+        crimeRate: "low",
+        schools: [
+            {name: "ES1", rating: 8},
+            {name: "MS2", rating: 8},
+            {name: "HS3", rating: 8}
+        ]
+    }
 
+    var neighborhood3 ={
+        neighborhood: "Ginormous Ego Estates",
+        medianHomePrice: 350000,
+        pool: true,
+        tennis: true,
+        crimeRate: "low",
+        schools: [
+            {name: "ES1", rating: 9},
+            {name: "MS2", rating: 9},
+            {name: "HS3", rating: 9}
+        ]
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+    // function desirableNeighborhood(neighborhoodObj) {
+    //     var totalRating = 0;
+    //     for (var i = 0; i < neighborhoodObj.schools.length; i++){
+    //         totalRating += neighborhoodObj.schools[i].rating;
+    //     }
+    //     return totalRating
+    // }
+    //
+    // console.log(desirableNeighborhood(neighborhood3));
 
 
 </script>

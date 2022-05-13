@@ -9,182 +9,230 @@
 <script>
     "Use strict";
 
-    let classes = [
-        {class: "6th grade history", students: 20},
-        {class: "7th grade history", students: 40},
-        {class: "8th grade history", students: 9}
-    ]
-    // return total students.
-    // Bonus: instead of the total students, return the highest number of students in any class
-    // return least students.
-
-    function total(a) {
-        var sum = 0
-        for (var i = 0; i < classes.length; i++){
-            sum += classes[i].students
-        }
-        return sum
-    }
-    console.log(total(classes));
-
-    function totalF(b){
-       var sum = 0
-        classes.forEach(function (y){
-            sum += y.students
-        });
-       return sum
-    }
-    console.log(totalF(classes));
-
-
-    function highestNumero(x) {
-        let most = 0
-        let mostName;
-        classes.forEach(function (element) {
-            if (element.students > most) {
-                most = element.students
-                mostName = element.class
-            }
-        });
-        return mostName;
-    }
-
-    console.log(highestNumero(classes));
-
-    function highestNum(c) {
-        var max = classes[0].students
-        for (var i = 0; i < classes.length; i++) {
-            if (classes[i].students > max) {
-                max = classes[i].students
-            }
-        }
-        return max
-    }
-
-    console.log(highestNum(classes));
-
-    function leastAlumni(){
-        var least = classes[0].students
-        for (var i = 0; i < classes.length; i++) {
-            if (classes[i].students < least)
-                least = classes[i].students
-        }
-            return least
-    }
-
-    console.log(leastAlumni(classes));
-
-
-
-    function smallClass(a){
-        var small = classes[0].students
-        classes.forEach(function(element){
-            if (element.students < small) {
-                small = element.students
-            }
-        })
-        return small
-    }
-    console.log(smallClass(classes));
-
-    // function returnLeastExpensiveProductObjectInStock(products) {
-    //     let lowest = products[0].priceInCents
-    //     let nameOfLowest;
-    //     products.forEach(function(element) {
-    //         if (element.priceInCents < lowest && element.isInStock === true) {
-    //             lowest = element.priceInCents
-    //             nameOfLowest = element.name
-    //         }
-    //     })
-    //     return nameOfLowest;
+    // let classes = [
+    //     {class: "6th grade history", students: 20},
+    //     {class: "7th grade history", students: 40},
+    //     {class: "8th grade history", students: 9}
+    // ]
+    // // return total students.
+    // // Bonus: instead of the total students, return the highest number of students in any class
+    // // return least students.
+    //
+    // function total(a) {
+    //     var sum = 0
+    //     for (var i = 0; i < classes.length; i++){
+    //         sum += classes[i].students
+    //     }
+    //     return sum
     // }
-
-    // It’s saving the value of students from the 1st index of classes into the max variable.
-    //     If the for loop finds anything higher than that,  then the higher value will be stored in max
-
-
-    var events = [
-        {
-            userId: 1,
-            place: "1Wormholes Allow Information to Escape Black Holes",
-            name: "Check out this recent discovery about workholes",
-            date: "2020-06-26T17:58:57.776Z",
-            id: 1
-        },
-        {
-            userId: 1,
-            place: "2Wormholes Allow Information to Escape Black Holes",
-            name: "Check out this recent discovery about workholes",
-            date: "2020-06-26T17:58:57.776Z",
-            id: 2
-        },
-        {
-            userId: 1,
-            place: "3Wormholes Allow Information to Escape Black Holes",
-            name: "Check out this recent discovery about workholes",
-            date: "2020-06-26T17:58:57.776Z",
-            id: 3
-        }
-    ];
-    console.log(events[2].place);
-
-    // function returnAveragePriceOfAllProductsInStock(products) {
-    //     let total = 0;
-    //     products.forEach(function(element) {
-    //         total += element.priceInCents;
-    //     })
-    //     return total/products.length;
+    // console.log(total(classes));
+    //
+    // function totalF(b){
+    //    var sum = 0
+    //     classes.forEach(function (y){
+    //         sum += y.students
+    //     });
+    //    return sum
+    // }
+    // console.log(totalF(classes));
+    //
+    //
+    // function highestNumero(x) {
+    //     let most = 0
+    //     let mostName;
+    //     classes.forEach(function (element) {
+    //         if (element.students > most) {
+    //             most = element.students
+    //             mostName = element.class
+    //         }
+    //     });
+    //     return mostName;
     // }
     //
-    // console.log(returnAveragePriceOfAllProductsInStock(products));
+    // console.log(highestNumero(classes));
+    //
+    // function highestNum(c) {
+    //     var max = classes[0].students
+    //     for (var i = 0; i < classes.length; i++) {
+    //         if (classes[i].students > max) {
+    //             max = classes[i].students
+    //         }
+    //     }
+    //     return max
+    // }
+    //
+    // console.log(highestNum(classes));
+    //
+    // function leastAlumni(){
+    //     var least = classes[0].students
+    //     for (var i = 0; i < classes.length; i++) {
+    //         if (classes[i].students < least)
+    //             least = classes[i].students
+    //     }
+    //         return least
+    // }
+    //
+    // console.log(leastAlumni(classes));
+    //
+    //
+    //
+    // function smallClass(a){
+    //     var small = classes[0].students
+    //     classes.forEach(function(element){
+    //         if (element.students < small) {
+    //             small = element.students
+    //         }
+    //     })
+    //     return small
+    // }
+    // console.log(smallClass(classes));
+    //
+    // // function returnLeastExpensiveProductObjectInStock(products) {
+    // //     let lowest = products[0].priceInCents
+    // //     let nameOfLowest;
+    // //     products.forEach(function(element) {
+    // //         if (element.priceInCents < lowest && element.isInStock === true) {
+    // //             lowest = element.priceInCents
+    // //             nameOfLowest = element.name
+    // //         }
+    // //     })
+    // //     return nameOfLowest;
+    // // }
+    //
+    // // It’s saving the value of students from the 1st index of classes into the max variable.
+    // //     If the for loop finds anything higher than that,  then the higher value will be stored in max
+    //
+    //
+    // var events = [
+    //     {
+    //         userId: 1,
+    //         place: "1Wormholes Allow Information to Escape Black Holes",
+    //         name: "Check out this recent discovery about workholes",
+    //         date: "2020-06-26T17:58:57.776Z",
+    //         id: 1
+    //     },
+    //     {
+    //         userId: 1,
+    //         place: "2Wormholes Allow Information to Escape Black Holes",
+    //         name: "Check out this recent discovery about workholes",
+    //         date: "2020-06-26T17:58:57.776Z",
+    //         id: 2
+    //     },
+    //     {
+    //         userId: 1,
+    //         place: "3Wormholes Allow Information to Escape Black Holes",
+    //         name: "Check out this recent discovery about workholes",
+    //         date: "2020-06-26T17:58:57.776Z",
+    //         id: 3
+    //     }
+    // ];
+    // console.log(events[2].place);
+    //
+    // // function returnAveragePriceOfAllProductsInStock(products) {
+    // //     let total = 0;
+    // //     products.forEach(function(element) {
+    // //         total += element.priceInCents;
+    // //     })
+    // //     return total/products.length;
+    // // }
+    // //
+    // // console.log(returnAveragePriceOfAllProductsInStock(products));
+    //
+    //
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // // fruits.push("Kiwi");
+    // //     fruits.pop("Mango")
+    // // console.log(fruits)
+    //
+    //  // ----Reorder an item in an array ----
+    // var sandwiches = ['ham', 'tuna', 'turkey', 'pb&j'];
+    //
+    // // Delete 'turkey' from index 2
+    // // start at index 2, remove 1 item
+    // // returns ["turkey"]
+    // sandwiches.splice(2, 1);
+    //
+    // // The sandwiches array no longer has 'turkey' in it
+    // // returns ["ham", "tuna", "pb&j"]
+    // sandwiches;
+    //
+    // // Add 'turkey' to index 0
+    // // start at index 0, remove 0 items, add 'turkey'
+    // // returns []
+    // sandwiches.splice(0, 0, 'turkey');
+    //
+    // // The sandwiches array now has 'turkey' in the first index
+    // // returns ["turkey", "ham", "tuna", "pb&j"]
+    //
+    // // ----Loop through array----
+    //
+    // var colors = ["red","blue","green"];
+    //
+    // // you can loop through an array like this:
+    // for (var i = 0; i < colors.length; i++) {
+    //     console.log(colors[i]);
+    // }
+    //
+    // console.log(colors[0])
+    //
+    // // Convert an array to a string:
+    //
+    //     var fruitss = ["Banana", "Orange", "Apple", "Mango"];
+    // // let text = fruitss.toString();
+    //
+    // function change(a){
+    //     return fruitss.toString()
+    // }
+    //
+    // console.log(change(fruitss));
+    //
 
+    function screamingSnakeCase (str) {
+        str = str.split(' ')
+        for (var i = 0; i < str.length; i++ ){
+            str[i] = str[i].toUpperCase() + str[i].substring(1)
 
-    const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    // fruits.push("Kiwi");
-    //     fruits.pop("Mango")
-    // console.log(fruits)
-
-     // ----Reorder an item in an array ----
-    var sandwiches = ['ham', 'tuna', 'turkey', 'pb&j'];
-
-    // Delete 'turkey' from index 2
-    // start at index 2, remove 1 item
-    // returns ["turkey"]
-    sandwiches.splice(2, 1);
-
-    // The sandwiches array no longer has 'turkey' in it
-    // returns ["ham", "tuna", "pb&j"]
-    sandwiches;
-
-    // Add 'turkey' to index 0
-    // start at index 0, remove 0 items, add 'turkey'
-    // returns []
-    sandwiches.splice(0, 0, 'turkey');
-
-    // The sandwiches array now has 'turkey' in the first index
-    // returns ["turkey", "ham", "tuna", "pb&j"]
-
-    // ----Loop through array----
-
-    var colors = ["red","blue","green"];
-
-    // you can loop through an array like this:
-    for (var i = 0; i < colors.length; i++) {
-        console.log(colors[i]);
+        }
+        return str.join(' ')
     }
 
-    console.log(colors[0])
 
-    // Convert an array to a string:
+    console.log(screamingSnakeCase('dude', 'whats', 'up'));
 
-        var fruitss = ["Banana", "Orange", "Apple", "Mango"];
-    // let text = fruitss.toString();
 
-    function change(a){
-        return fruitss.toString()
-    }
+    // Write a function named describeNumber that takes in an integer and will return an object describing different features of the input as a number. If the input is a number, the object should have three properties: value for the value passed, evenOrOdd which should be a string to identify whether the passed argument is evenly divisible by 2, and numberOfDigits which should count the number of digits in the argument passed into the function:
 
-    console.log(change(fruitss));
+//     Create an HTML file called dom-practice.html in codeup-web-exercises repos.
+//         Put a text input on an html page with id of “color”
+// Put a button on the page with id of “changeColor”
+// Use an Event listener to trigger when the button is clicked.
+//         Use the value to change the background-color of the page to match the user’s input value.
+//         example of input: “#00000”, “black”, “#FF00FF”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-practice</title>
+</head>
+<body>
+
+<input type="text" id="color"/>
+
+<input type="button" id="changeColor" value="Click to Change Color">
+
+
+
+
+
+
+
+<script>
+
+    var button = document.getElementById("changeColor")
+    var color = document.querySelector("#color")
+    var body = document.querySelector("body")
+function changeColor(e) {
+
+
+
+    body.style.backgroundColor = "#" + color.value
+}
+
+
+    button.addEventListener("click", changeColor)
+
+// function changeColor() {
+//     let color = document.getElementById('color')
+// }
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

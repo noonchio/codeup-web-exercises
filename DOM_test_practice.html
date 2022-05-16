@@ -29,10 +29,12 @@
 <div class="question">
     <h1>Question 2</h1>
     <input type="text" id="todo">
-    <button type="button" id="addTodo">Add Todo</button>
+    <button type="button" id="addTodo">Add Todo</button><br>
     <ul id="todosList">
-    </ul>
+    </ul><br>
+    <button onclick="myFunction()">Remove</button>
 </div>
+
 
 
 <div class="question">
@@ -59,8 +61,6 @@
     <button id="submitString">Add</button>
     <p id="madLib">Hello</p>
 </div>
-
-
 
 <script>
 
@@ -94,18 +94,28 @@
     //          example: <li>input</li> inside of <ul>
     //       b. Reset the value in the addTodos input.
     // 5. If the value for the input is empty. Prevent it from creating another <li> element
+//Create a new list item when add button is clicked.
+//     var li = document.createElement('li');
+//     var inputValue = document.getElementById("todo").value;
+//     var todoList = document.querySelector('#todosList')
 
-    function aToDo () {
-        let container = document.querySelector('div');
-        let input = document.querySelector('#todo').value
-        const todo = document.createElement('li')
-        const txt = document.createTextNode(input)
-        todo.appendChild(txt);
-        document.body.insertBefore(todo, container);
+  var addTask = function () {
+        var item = document.getElementById("todo").value
+        var text = document.createTextNode(item)
+        var newItem = document.createElement('li')
+      newItem.appendChild(text)
+      document.getElementById("todosList").appendChild(newItem)
+  }
+
+    var button2 = document.querySelector('#addTodo');
+    button2.addEventListener('click', addTask);
+
+    // .remove() method
+
+    function myFunction() {
+        const element = document.getElementById("todosList");
+        element.remove();
     }
-        addTodo.addEventListener('click', aToDo)
-
-
 
 
 
@@ -120,18 +130,57 @@
     // Add a toggle button with id of "toggleH1"
     // use that button to stop and restart the h1 tags from changing size.
 
+    function intervalFunction() {
+        var h1 = document.getElementsByTagName("h1")
+
+        for(var i = 0; i <h1.length; i++) {
+            var currentSize = h1[i].style.fontSize;
+            if (currentSize === "10px") {
+                h1[i].style.fontSize = "20px"
+            } else {
+                h1[i].style.fontSize = "10px";
+            }
+        }
+    }
+
+    var interval;
+    // var interval = setInterval(intervalFunction, 1000)
+    var toggleH1s = document.querySelector("#toggleH1")
+    var isOn = false;
+        toggleH1s.addEventListener("click", function (){
+            isOn = !isOn;
+            if (isOn){
+                interval = setInterval(intervalFunction, 1000)
+            } else {
+                clearInterval(interval)
+            }
 
 
+        })
     // DOM Question #4
 
     // When the mouse enters the content area of the 4th div with the class of "question", an alert should pop up
     // that reads "CONGRATULATIONS ON YOUR NEW CRUISE!";
+
+    // var questionFour = document.getElementsByClassName("question")[3]
+    //
+    // var q
+    //
+    // questionFour.addEventListener('mouseenter', function (){
+    //     alert("CONGRATS ON YOUR NEW CRUISE!")
+    // })
 
 
 
     // DOM Question# #5
 
     // When a user clicks a button labeled "Google" the user should be redirected to the "https://google.com"
+    var redirectButton = document.getElementById("google")
+
+    redirectButton.addEventListener("click", function () {
+        window.location = "https://www.google.com"
+        // location.assign("https://www.google.com")
+     })
 
 
     // DOM Question #6
@@ -139,7 +188,13 @@
     // When the user types something into an input element, the value should be concatenated
     // onto the paragraph with the ID of "madLib" once the submit button has been clicked.
 
+        var madLibButton = document.getElementById("submitString");
+        var madLibInput = document.querySelector("#userInput")
+        var madLibString = document.querySelector("#madLib")
 
+        madLibButton.addEventListener("click", function () {
+            madLibString.innerHTML += madLibInput.value;
+        })
 
 </script>
 </body>

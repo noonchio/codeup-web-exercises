@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+'use strict'
+
+//JQuery Events
+//
+// $('#click'.click(handlerFunction))
+//
+// $("#click").on("click", handlerFunction)
+
+// same thing ^
+
+//create a click handler to display the content that is related to the Nav bars links will nly diplay the content that is clicked at the time.
+
+$("ul > li > a").click(function (e) {
+    console.log("e", e.target.href);
+    var href = e.target.href;
+
+    var mouseEvent = $("#mouseEvents").get(0);
+    var keyboardEvents = $("#keyboardEvents").get(0);
+    var navElements = $("ul > li > a")
+
+    navElements.get()
+    e.target.classList.add("active")
+
+    if (href.includes("keyboardEvents")) {
+        mouseEvent.classList.add("hide");
+        keyboardEvents.classList.remove("hide")
+    } else if (href.includes("mouseEvents")) {
+        mouseEvent.classList.remove("hide")
+        keyboardEvents.classList.add("hide");
+
+    } else {
+        mouseEvent.classList.remove("hide");
+        keyboardEvents.classList.remove("hide");
+    }
+
+})
+
+function handlerIn (e) {
+   var codeBlock = e.target.nextElementSibling;
+
+   codeBlock.classList.add("hover");
+}
+
+function handlerOut (e) {
+    var codeBlock = e.target.nextElementSibling;
+    codeBlock.cassList.remove("hover");
+}
+
+
+$("article > h3").hover(handlerIn, handlerOut)
+
+
+
+$(document).keydown(function (e){
+   var values =  "Key:" + e.key + "KeyCode:" + e.keyCode
+   $("#keydownValue").get(0).innerText = values;
+
+})
+
+$(document).keypress(function (e) {
+    //adding to the end of a string
+    var keyPress = $("#keypressValue");
+
+    // var text = keyPress.test();
+
+    keyPress.text(keyPress.text() + e.key);
+
+
+});
+
+
+$("#keypress").off("click", handlerOut)
+
+
+
+
+
+</script>
+
+</body>
+</html>

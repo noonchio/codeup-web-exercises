@@ -3,10 +3,10 @@
 <head>
   <title>Konami Code</title>
 </head>
-<body>
+<body class ="bg">
 <h1>Konami Code</h1>
 
-
+<div id="x"></div>
 
 
 
@@ -20,7 +20,22 @@
 userInput += event.key;
 // if (userInput.includes("ArrowUpArrowUPArrowDownArrowDown")) {
     if (userInput === "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter"){
-  alert("YOU HAVE ADDED 30 LIVES!")
+  alert("YOU HAVE ADDED 30 LIVES!");
+      $(".bg").css("background-image", "url('/images/retro_slug.jpeg')");
+      $('.bg').css('background-size', 'cover');
+
+
+      var img = document.createElement("img");
+      img.src = "/images/metal-slug-zombie.gif";
+
+      var div = document.getElementById("x");
+      div.appendChild(img);
+      // block.setAttribute("style", "text-align:center")
+      $("#x").css('text-align', 'center')
+
+
+
+
 
 }
     console.log(userInput)

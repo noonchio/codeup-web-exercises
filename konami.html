@@ -12,31 +12,23 @@
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="/js/jquery.js"></script>
+<!--<script src="/js/jquery.js"></script>-->
 <script>
   "use strict";
   let userInput = ""
   $(document).keyup(function(event){
 userInput += event.key;
-// if (userInput.includes("ArrowUpArrowUPArrowDownArrowDown")) {
     if (userInput === "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter"){
   alert("YOU HAVE ADDED 30 LIVES!");
       $(".bg").css("background-image", "url('/images/retro_slug.jpeg')");
       $('.bg').css('background-size', 'cover');
 
-
       var img = document.createElement("img");
       img.src = "/images/metal-slug-zombie.gif";
-
       var div = document.getElementById("x");
       div.appendChild(img);
       // block.setAttribute("style", "text-align:center")
       $("#x").css('text-align', 'center')
-
-
-
-
-
 }
     console.log(userInput)
   });

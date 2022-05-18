@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery FAQ</title>
+</head>
+<body>
+
+<p id="title">Glacier National Park</p>
+
+<dl>
+    <dt>Q: Where is Glacier National Park located?</dt>
+        <dd>A:
+            Glacier National Park is located in northwestern Montana on the U.S./Canadian border. Access to the park from the east and west is along U.S. Highway 2. Park headquarters is located in West Glacier.</dd>
+    <dt>Q: When is the park open?</dt>
+        <dd id="answer">A:
+            Glacier National Park is open year-round, 24 hours a day. In the fall winter and spring, some roads are inaccessible by car due to snow.</dd>
+    <dt>Q: What does it cost to enter the park?</dt>
+    <dd>A:
+        Glacier National Park is open year-round, 24 hours a day. In the fall winter and spring, some roads are inaccessible by car due to snow.</dd>
+    <dt>Q: Where are the closest airports to the park? Is there transportation from the airports to the park?</dt>
+    <dd>A:
+        Glacier Park International Airport in Kalispell, Montana is 25 miles west of park headquarters in West Glacier, Montana.</dd>
+    <dt>Q: What is the closest train station to the park?</dt>
+    <dd>A:
+        Amtrak rail lines parallel the southern and southwestern borders of the park. Amtrak stops at West Glacier (Belton), East Glacier (summer only), and Essex (upon request).</dd>
+    <dt>Q: What transportation is available within the park?</dt>
+    <dd>A:
+        In addition to private automobiles, guided tours are available in the main sections of the park. Contact Glacier Park, Inc. and Sun Tours for information (see addresses and telephone numbers below). Rental cars are available in neighboring communities.</dd>
+    <dt>Q: Where are the visitor centers located in the park?</dt>
+    <dd>A:
+        Visitor centers are located in Apgar, Logan Pass, and St. Mary. Each of these visitor centers, as well as the Many Glacier and Two Medicine Ranger Stations, have park rangers on duty throughout the summer months to answer questions and provide information. During the winter months, Apgar Visitor Center is open on week-ends.</dd>
+    <dt>Q: Do you have campgrounds in the park? Can I make a reservation?</dt>
+    <dd>A:
+        Glacier National Park has 13 campgrounds, which provide just over 1000 campsites. Most of the campgrounds are operated on a "first come, first serve" basis. Fish Creek and St. Mary Campgrounds will be available for reservation by calling 1-800-365-2267. Click here for more detailed information on camping.</dd>
+    <dt>Q: Is it possible to reserve a backcountry campsite?</dt>
+    <dd>A:
+        Reservations for backcountry campsites may be made in advance, beginning April 1 for the upcoming summer. For further information on backcountry camping and for making reservations, visit our website section on Backcountry Camping.</dd>
+   <dt> Q: Can I drive my RV along the Going-to-the-Sun Road?</dt>
+    <dd>A:
+        Vehicles, and vehicle combinations, longer than 21 feet (including bumpers) or wider than 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area. You may however, drive to Avalanche if traveling east, and to Sun Point, if traveling west. Vehicles over 10 feet in height may have difficulty driving west from Logan Pass due to rock overhangs. Stock trucks and trailers may access Packers Roost and Siyeh Bend.</dd>
+
+    <h3>Denali National Park</h3>
+    <ul>
+        <li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language of the Athabascan tribe, this towering peak stands at 20,320 feet above sea level.</li>
+        <li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of local residents who celebrated with hot chocolate and donuts.</li>
+        <li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
+        <li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian known in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.</li>
+    </ul>
+    <h3>Yellowstone National Park</h3>
+    <ul>
+        <li>World's First National Park.</li>
+        <li>A designated World Heritage Site and designated Biosphere Reserve.</li>
+        <li>3,472 square miles or 8,987 square km.</li>
+        <li>96 % in Wyoming an 3 % in Montana.</li>
+    </ul>
+    <h3>Yosemite National Park</h3>
+    <ul>
+        <li>El Capitan is the largest granite monolith in the world. It rises more than 3,000 feet above the valley floor and is a favorite for experienced rock climbers.</li>
+        <li>Yosemite Falls: This is the tallest waterfall in North America. Snow runoff cascades down the 2,425 foot drop, with peak flow in May. In winter, an ice cone is often visible at the top of the falls.</li>
+        <li>Giant Sequoias and Mariposa Grove: Mariposa Grove contains about 500 mature giant sequoias. </li>
+        <li>There are 840 miles of trails to hike in Yosemite National Park</li>
+    </ul><br>
+
+    <button class="button1">Button</button>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script>
+    // $(function() {
+    //     'use strict'
+
+    // Add a class to all dd elements named invisible
+$('dd').addClass('invisible', 'visible');
+
+    // var element = document.createElement('style'),
+    //     sheet;
+    // document.head.appendChild(element);
+    //
+    // sheet = element.sheet
+    //
+    // $("head").append('<style id="new-sheet" type="text/css"></style>');
+    // var sheet = $("#new-sheet").get(0).sheet;
+
+    // Create some CSS rules that sets elements with the invisible class to visibility: hidden;.
+    // $('.invisible').css({'visibility': 'hidden'})
+
+    // Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
+
+    // $('dd').dblclick(function() {
+    //     $(this).toggleClass('awesome-title');
+    // });
+
+    // $('body').dblclick(function() {
+    //     $(this).toggleClass('invisible');
+    // });
+
+    // $( "p" ).click(function() {
+    //     $( 'dd' ).toggleClass( "invisible" );
+    // });
+
+
+
+
+$("dt").click(function () {
+    $("dd").toggle("invisible")
+})
+
+
+
+
+    // Under the FAQ, add 3 unordered lists like above. Each list should contain a national park name in an h3 element, and a ul of 4 facts about the park.
+
+    // Create a button that, when clicked, makes the last li in each ul have a yellow background.
+
+    // $("li:last-child").css("background-color", "yellow");
+    $("button").click(function (){
+        // $("li:last-child").css("background-color", "yellow").toggle();
+        $("li:last-child").css("background-color", "yellow") ;
+    })
+
+    // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+
+    $("h3").click(function(){
+        // $("li:last-child").css("background-color", "yellow") ;
+        $("ul").css("font-weight", "bold")
+    });
+
+    // When any list item is clicked, first li of the parent ul should have a font color of blue
+
+    $("li").click(function (){
+        // $('li').first().css('color', 'blue')
+        $("li:first-child").css("color", "blue")
+
+    })
+
+
+//.each
+    $('li').each(function(index, value) {
+        console.log(`li:${index} ${this.id}`);
+    });
+
+    // Create 3 divs that each look like a picture frame. Each one should have a unique background image and a button underneath that swaps the image from the frame. Use the traversing functions of jQuery to accomplish this.
+    //
+    //     The rules are the following:
+    //
+    //     The left frame swaps to the right and takes the image from the frame in the center.
+    //     The center frame swaps randomly to either the left or right.
+    //     The right frame swaps to the left and takes the image from the frame in the center.
+
+
+
+
+
+
+ // });
+</script>
+
+
+
+
+</dl>
+
+
+</body>
+</html>

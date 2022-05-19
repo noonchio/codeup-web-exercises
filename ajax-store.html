@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table><br>
+
+<button onClick="window.location.reload();">Refresh Page</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+
+    // $.ajax("data/inventory.json")
+
+    $.ajax("data/inventory.json").done(function (data){
+        console.log(data);
+    })
+
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    $.ajax("data/inventory.json").done(function (data){
+        console.log(data);
+        data.forEach(function (tool){
+            console.log(tool)
+            var title = '';
+            tool.title ? title = tool.title : title = "Untitled";
+            $("#insertProducts").append('<tr><td>' +title + '</td>' +
+                '<td>'+tool.quantity +'</td> <td>'+tool.price +'</td> <td>'+tool.categories+'</td></tr>');
+            // var quantity = '';
+            // tool.quantity ? quantity = tool.quantity : quantity = "Untitled";
+            // $("#insertProducts").append('<tr><td>' +quantity + '</td></tr>');
+
+        })
+
+    })
+
+
+
+
+
+
+    // function renderCoffee(coffee) {
+    //     var html = '<tr class="coffee">';
+    //     html += '<td>' + coffee.id + '</td>';
+    //     html += '<td>' + coffee.name + '</td>';
+    //     html += '<td>' + coffee.roast + '</td>';
+    //     html += '</tr>';
+    //
+    //     return html;
+    // }
+    //
+    // function renderCoffees(coffees) {
+    //     var html = '';
+    //     for(var i = coffees.length - 1; i >= 0; i--) {
+    //         html += renderCoffee(coffees[i]);
+    //     }
+    //     return html;
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})();
+</script>
+
+<img src="/images/panda.webp" alt="Trulli" width="500" height="333">
+
+</body>
+</html>

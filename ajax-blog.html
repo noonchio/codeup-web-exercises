@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .image {
+            background-image: url("images/castillo.jpeg");
+            height: 150px;
+
+        }
+
+        h1 {
+            padding-top: 10px;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        p::first-letter {
+            -webkit-initial-letter: 8;
+            initial-letter: 8;
+            color: orange;
+            font-weight: bold;
+            /*margin-right: .15em;*/
+        }
+
+        p:after {
+            content: "⁂";
+
+            display: block;
+            font-size: .9em;
+            text-align: center;
+        }
+
+        body {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+<div id="posts"></div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+
+    $.ajax("data/blog.json").done(function (data) {
+        console.log(data);
+
+        data.forEach(function (post) {
+            console.log(post)
+            $("#posts").append('<div class="image"><h1>'+post.title +'</h1></div>')
+            $("#posts").append('<h3>'+post.categories +'</h3>')
+            $("#posts").append('<h4>'+post.date +'</h4>')
+            $("#posts").append('<p class="subhead">'+post.content + '</p>')
+        });
+        });
+
+
+
+</script>
+
+</body>
+</html>

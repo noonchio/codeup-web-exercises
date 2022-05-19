@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to AJAX</title>
+    <style>
+        #murals-info {
+            margin: 10px auto;
+            border: 5px ridge blueviolet;
+            padding: 15px;
+            width: 25%;
+            text-align: center;
+        }
+        #murals-info:hover {
+            cursor: pointer;
+            background-color: aliceblue;
+        }
+        #card-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid darkgray;
+            padding: 5px;
+            width: 330px;
+        }
+    </style>
+
+</head>
+<body>
+<section id="murals-info">
+    <p>I want to know about murals</p>
+</section>
+<section id="card-section"></section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $("#murals-info").click(function (){
+        $.ajax("data/murals.json").done(function(data){
+            // console.log(data);
+            data.forEach(function (mural){
+                // console.log(mural.artwork_title ? mural.artwork_title : "Untitled")
+                var title = '';
+                mural.artwork_title ? title = mural.artwork_title : title = "Untitled";
+                $("#card-section").append('<article class ="card"><p>' +title + '</p><p>' + mural.artist_credit + '</p></article>');
+
+            })
+        });
+    });
+
+    // $("#murals-info").click(function (){
+    //    $.ajax("data/murals.json").done(function (data){
+    //        console.log(data);
+    //    })
+    //
+    // })
+
+
+
+
+</script>
+</body>
+</html>

@@ -27,17 +27,27 @@
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [126.9782914, 37.56385], // starting position [lng, lat]
+        center: [-97.7436995, 30.2711286], // starting position [lng, lat]
         zoom: 9 // starting zoom
     });
 
+    let faveMarker = new mapboxgl.Marker()
+        .setLngLat([-97.72347, 30.262032])
+        .addTo(map);
+
+    let favePopup = new mapboxgl.Popup().setHTML('<p class = "mt-2">Suerte</p>')
+    faveMarker.setPopup(favePopup)
 
 
 
 
 </script>
 
-<!--.setLngLat([37.56385, 126.98188])-->
+
+
+<!--126.9782914, 37.56385 Seoul-->
+
+
 
 
 

@@ -41,6 +41,10 @@
     $.ajax("data/inventory.json").done(function (data){
         console.log(data);
     })
+    //               ----SAME AS ABOVE----
+    // $.get("/data/inventory.json").done(function (data){
+    //     console.log(data)
+    // });
 
 
 
@@ -61,9 +65,24 @@
             // tool.quantity ? quantity = tool.quantity : quantity = "Untitled";
             // $("#insertProducts").append('<tr><td>' +quantity + '</td></tr>');
 
-        })
+        });
 
-    })
+    });
+
+            $("button").on('click', function (){
+                location.reload()
+            });
+
+
+
+    // $.get("/data/inventory.json").done(function (data) {
+    //     data.forEach(function (tool){
+    //         $("#insertProducts").append(
+    //             '<tr>
+    //                 <td>' +tool.title + '</td>
+    //         </tr>')
+    // })
+    // })
 
 
 

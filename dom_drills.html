@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript + DOM</title>
+  <style>
+    body {
+      padding: 25px;
+      background-color: white;
+      color: black;
+      font-size: 25px;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+</head>
+<body>
+<h1>DOM List</h1>
+<p id="first">Get it done today</p>
+<input id="userinput" type="text" placeholder="enter items">
+<button id="enter">Enter</button>
+<ul>
+  <li class="bold red" random="23">Notebook</li>
+  <li>Jello</li>
+  <li>Spinach</li>
+  <li>Rice</li>
+  <li>Birthday Cake</li>
+  <li>Candles</li>
+</ul><hr>
+
+<input id="userinput1" type="text" placeholder="enter color">
+<button type="button" id="btn1">Change Color</button><hr>
+
+<button type="button" id="changecolor">Change Color</button><hr>
+
+<button type="button" id="onandoff">dark mode</button><hr>
+
+<input type="button" value="Generate a table." onclick="generate_table()">
+
+<div id="div">
+
+  <p><span id="seconds-counter">0</span> seconds on the page</p>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+  'use strict'
+//  take user input and add to ul with a button.
+  var input = document.getElementById("userinput")
+  var button = document.getElementById("enter")
+  var ul = document.querySelector("ul")
+
+
+  function createListElement() {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(input.value));
+    ul.appendChild(li);
+    input.value = "";
+  }
+
+  button.addEventListener("click", createListElement);
+
+  // grab input from form and change color of background
+  // first create variables to hold input and to target our button
+  // create a function to feed into our event listener
+  var userIN = document.getElementById("userinput1")
+  var btn1 = document.getElementById("btn1")
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = userIN.value
+  }
+
+  btn1.addEventListener("click", changeBgColor);
+
+  // use a button to do something
+  // use a button to change background color to cornsilk
+var button1 = document.getElementById("changecolor")
+
+  function changeBackgroundColor() {
+      document.body.style.backgroundColor = "cornsilk"
+  }
+
+ button1.addEventListener("click", changeBackgroundColor)
+
+// button to toggle dark mode on and off
+  var btn2 = document.getElementById("onandoff");
+
+function mode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode")
+}
+
+btn2.addEventListener("click", mode)
+
+// table
+
+  function generate_table() {
+    // get the reference for the body
+    var body = document.getElementsByTagName("body")[0];
+
+    // creates a <table> element and a <tbody> element
+    var tbl = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+
+    // creating all cells
+    for (var i = 0; i < 2; i++) {
+      // creates a table row
+      var row = document.createElement("tr");
+
+      for (var j = 0; j < 2; j++) {
+        // Create a <td> element and a text node, make the text
+        // node the contents of the <td>, and put the <td> at
+        // the end of the table row
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode("cell in row "+i+", column "+j);
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+      }
+
+      // add the row to the end of the table body
+      tblBody.appendChild(row);
+    }
+
+    // put the <tbody> in the <table>
+    tbl.appendChild(tblBody);
+    // appends <table> into <body>
+    body.appendChild(tbl);
+    // sets the border attribute of tbl to 2;
+    tbl.setAttribute("border", "2");
+  }
+
+
+// // create an element and append to browser
+//
+//   var div = document.getElementById("div");
+//
+//   var paragraph = document.createElement("p");
+//
+//   paragraph.textContent = 'Hello. I was created dynamically';
+//
+//   div.appendChild(paragraph);
+//
+// // create a button element
+//
+//   var  btn = document.createElement("button");
+//   btn.innerHTML = "Button";
+//   document.body.appendChild(btn);
+
+// click button and table appears on page
+
+
+
+
+  var seconds = 0;
+  var el = document.getElementById('seconds-counter');
+
+  function incrementSeconds() {
+    seconds += 1;
+    el.innerText = "You have been here for " + seconds + " seconds.";
+  }
+
+  var cancel = setInterval(incrementSeconds, 1000);
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -31,18 +31,27 @@
         zoom: 9 // starting zoom
     });
 
-    let faveMarker = new mapboxgl.Marker()
-        .setLngLat([-97.72347, 30.262032])
+    // let faveMarker = new mapboxgl.Marker()
+    //
+    //     .setLngLat([-97.72347, 30.262032])
+    //     .addTo(map);
+
+    // Set marker options.
+    const marker = new mapboxgl.Marker({
+        color: "#FFFFFF",
+        draggable: true
+    }).setLngLat([-97.72347, 30.262032])
         .addTo(map);
 
 
 
 
 
+
     let favePopup = new mapboxgl.Popup().setHTML('<p class = "mt-2">Suerte</p>')
-    faveMarker.setPopup(favePopup)
+    marker.setPopup(favePopup)
 
-
+console.log()
 
 
 

@@ -40,14 +40,22 @@ function weatherMap () {
         const locationElement = document.querySelector(".location p")
         const notificationElement = document.querySelector(".notification")
 
+        const icon = data.current.weather[0].icon
 
-            console.log(data.current.weather[0])
+
+        console.log(data)
 
 
 
           tempElement.innerHTML = `${data.current.temp}°<span>F<span>`
 
           descElement.innerHTML = (data.current.weather[0].description)
+
+          // iconElement.innerHTML = `<img src = "http://openweathermap.org/img/w/${icon}.png">`
+
+          locationElement.innerHTML = `Longitude: ${marker.getLngLat().lng} Latitude: ${marker.getLngLat().lat}`
+
+
 
 
 
@@ -72,7 +80,7 @@ function weatherMap () {
                 let datetime = new Date(dailyForecast.dt * 1000)
                 console.log(months[datetime.getMonth()] + " " + datetime.getDate())
                 let date1 = months[datetime.getMonth()] + " " + datetime.getDate()
-                $("#forecast").append('<h3>' + date1 + '</h3>' + '<p>' + mini + dailyForecast.temp.min + ' ℉' + '</p>' + '<p>' + high + dailyForecast.temp.max + " ℉" + '</p>' + '<p>' + humidity + dailyForecast.humidity + '</p>')
+                $("#forecast").append('<h3>' + date1 + '</h3>' + '<p>' + mini + dailyForecast.temp.min + ' ℉' + '</p>' + '<p>' + high + dailyForecast.temp.max + " ℉")
 
             }
             // console.log('A step further - information for tomorrow: ', data.daily[1]);

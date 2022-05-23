@@ -8,6 +8,7 @@ body{
     width: 300px;
     /*height: 300px;*/
     background-color: #ffffff;
+    /*background-color: #293251;*/
 
 
 
@@ -49,7 +50,8 @@ body{
 .weather-container{
     width: 100px;
     height: 60px;
-    background-color: #F4F9FF;
+    /*background-color: #F4F9FF;*/
+    background-color: #293251;
 }
 
 .weather-icon{
@@ -72,6 +74,10 @@ body{
 
 
 
+
+
+
+
 }
 
 .temperature-value{
@@ -83,7 +89,9 @@ body{
     padding: 0;
     margin: 0;
 
-    color: #293251;
+    /*color: #293251;*/
+
+
     font-size: 2em;
     text-align: center;
     cursor: pointer;
@@ -139,17 +147,25 @@ body{
     /*margin-left: 30px;*/
     background-color: #eeeeee;
     padding-left: 30px;
-    padding-top: 0px;
+    padding-top: 20px;
     /*border-radius: 10px;*/
 
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /*border: 10px solid lightgray;*/
+    /*border-top: 10px solid #293251;*/
+
+    font-size: small;
 
 }
 
 .search-container {
-    position: relative;
-    top: 50px;
+    /*position: relative;*/
+    /*top: 50px;*/
+
+    /*margin: auto;*/
 
     margin: auto;
+
 }

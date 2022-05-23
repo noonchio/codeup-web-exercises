@@ -31,6 +31,8 @@
   <li>Candles</li>
 </ul><hr>
 
+<p id="demo"></p>
+
 <input id="userinput1" type="text" placeholder="enter color">
 <button type="button" id="btn1">Change Color</button><hr>
 
@@ -42,7 +44,15 @@
 
 <div id="div">
 
-  <p><span id="seconds-counter">0</span> seconds on the page</p>
+  <p><span id="seconds-counter">0</span> seconds on the page</p><br>
+
+  <button id="stop">Stop Interval</button><br>
+
+  <h1 id="mouse">Mouse over me</h1>
+
+
+
+
 
 
 
@@ -155,7 +165,7 @@ btn2.addEventListener("click", mode)
 
 
 
-
+// set interval
   var seconds = 0;
   var el = document.getElementById('seconds-counter');
 
@@ -167,6 +177,32 @@ btn2.addEventListener("click", mode)
   var cancel = setInterval(incrementSeconds, 1000);
 
 
+
+
+  function stop() {
+  clearInterval(cancel)
+  }
+
+  let buttonStop = document.getElementById("stop")
+
+  buttonStop.addEventListener("click", stop)
+
+// add text to html
+const myBody = "Hello Amigo"
+
+  document.getElementById("demo").innerHTML = myBody
+
+// mouse over
+  document.getElementById("mouse").addEventListener("mouseover", mouseOver);
+  document.getElementById("mouse").addEventListener("mouseout", mouseOut);
+
+  function mouseOver() {
+    document.getElementById("mouse").style.color = "red";
+  }
+
+  function mouseOut() {
+    document.getElementById("mouse").style.color = "black";
+  }
 
 
 

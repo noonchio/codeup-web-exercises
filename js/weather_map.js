@@ -15,7 +15,7 @@ let marker = new mapboxgl.Marker()
     .setLngLat([-98.4946, 29.4252])
     .addTo(map);
 
-// Drag marker to get forecast, weather conditions at dropped location
+
 marker.on("dragend", function () {
     weatherMap();
 
@@ -34,59 +34,48 @@ function weatherMap () {
     }).done(function (data) {
 
 
-      const iconElement =  document.querySelector(".weather-icon")
-        const tempElement = document.querySelector(".temperature-value p")
-        const descElement = document.querySelector(".temperature-description")
-        const locationElement = document.querySelector(".location p")
-        const notificationElement = document.querySelector(".notification")
-
-        const icon = data.current.weather[0].icon
-
-
-        console.log(data)
-
-
-
-          tempElement.innerHTML = `${data.current.temp}°<span>F<span>`
-
-          descElement.innerHTML = (data.current.weather[0].description)
-
-          // iconElement.innerHTML = `<img src = "http://openweathermap.org/img/w/${icon}.png">`
-
-          locationElement.innerHTML = `Longitude: ${marker.getLngLat().lng} Latitude: ${marker.getLngLat().lat}`
-
-
-
-
-
-
-
-
-
-
+      // const iconElement =  document.querySelector(".weather-icon")
+      //   const tempElement = document.querySelector(".temperature-value p")
+      //   const descElement = document.querySelector(".temperature-description")
+      //   const locationElement = document.querySelector(".location p")
+      //   const notificationElement = document.querySelector(".notification")
+      //
+      //   const icon = data.current.weather[0].icon
+      //
+      //
+      //   console.log(data)
+      //
+      //     tempElement.innerHTML = `${data.current.temp}°<span>F<span>`
+      //
+      //     descElement.innerHTML = (data.current.weather[0].description)
+      //
+      //     iconElement.innerHTML = `<img src = "http://openweathermap.org/img/wn/${icon}@4x.png">`
+      //
+      //     locationElement.innerHTML = `Longitude: ${marker.getLngLat().lng} Latitude: ${marker.getLngLat().lat}`
 
 
         const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        const icon = data.current.weather[0].icon
 
         console.log(data.current)
 
 
-        $("#current").append('<p>' + data.current.temp + " ℉" + '</p>')
         data.daily.forEach(function (dailyForecast, index) {
             if (index < 5) {
-                let humidity = "Humidity: "
                 let mini = "Low: "
                 let high = "High: "
                 let datetime = new Date(dailyForecast.dt * 1000)
                 console.log(months[datetime.getMonth()] + " " + datetime.getDate())
                 let date1 = months[datetime.getMonth()] + " " + datetime.getDate()
-                $("#forecast").append('<h3>' + date1 + '</h3>' + '<p>' + mini + dailyForecast.temp.min + ' ℉' + '</p>' + '<p>' + high + dailyForecast.temp.max + " ℉")
+                // $("#forecast").append('<h3>' + date1 + '</h3>' + '<p>' + mini + dailyForecast.temp.min + ' ℉' + '</p>' + '<p>' + high + dailyForecast.temp.max + " ℉")
+                $("#forecast").append('<h3>' + date1 + '</h3>')
+                $("#forecast").append('<p>' + high + parseInt(dailyForecast.temp.max) + ' ℉' + '</p>')
+                $("#forecast").append('<p>' + mini + parseInt(dailyForecast.temp.min) + ' ℉' + '</p>')
+                $("#forecast").append('<div>' +`<img src = "http://openweathermap.org/img/w/${icon}.png">` + '</div>')
+                $("#forecast").append('<p>' +  data.current.weather[0].description + '</p>')
 
             }
             // console.log('A step further - information for tomorrow: ', data.daily[1]);
-
-
-
         });
     });
 }

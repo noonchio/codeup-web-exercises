@@ -62,21 +62,14 @@ console.log(totalAvg)
 
 // Use .reduce to get the longest email from the list of users.
 
-// let longesMail = users.reduce((longest, user) =>{
-//     console.log(longest)
-//     console.log(user.email)
-//     if (user.email.length > longest){
-//         longest.push(user)
-//     }
-//     return user
-//
-// },[])
-//
-// // console.log(longesMail);
-//
-// let names = users.reduce((previousValue, currentValue) => {
-//
-// }, [])
+let longestEmail = users.reduce((previousEmail, currentEmail) => {
+    console.log(previousEmail.email);
+    if (previousEmail.length < currentEmail.email.length) {
+        previousEmail = currentEmail.email
+    }
+    return previousEmail
+}, "");
+console.log(longestEmail)
 
 // var authors = [{
 //     name: "a"
@@ -97,6 +90,8 @@ let name = users.reduce((previousValue, currentValue) => {
     // console.log(previousValue)
     // console.log(currentValue.id)
         previousValue.push(currentValue.name)
+
+
 
     return previousValue
 

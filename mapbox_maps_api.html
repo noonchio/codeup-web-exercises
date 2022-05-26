@@ -28,7 +28,7 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-97.7436995, 30.2711286], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        zoom: 8 // starting zoom
     });
 
     // let faveMarker = new mapboxgl.Marker()
@@ -42,14 +42,38 @@
         draggable: true
     }).setLngLat([-97.72347, 30.262032])
         .addTo(map);
-
-
-
-
-
-
     let favePopup = new mapboxgl.Popup().setHTML('<p class = "mt-2">Suerte</p>')
     marker.setPopup(favePopup)
+
+    // Round Rock Donuts
+    const marker1 = new mapboxgl.Marker({
+        color: "#FFFFFF",
+        draggable: true
+    }).setLngLat([-97.6799133, 30.5095412])
+        .addTo(map);
+
+    // Terry Black BBQ
+    const marker2 = new mapboxgl.Marker({
+        color: "#FFFFFF",
+        draggable: true
+    }).setLngLat([-97.7548076, 30.2596649])
+        .addTo(map);
+
+    // Uchiko
+    const marker3 = new mapboxgl.Marker({
+        color: "#FFFFFF",
+        draggable: true
+    }).setLngLat([-97.7400068, 30.3106073])
+        .addTo(map);
+
+    // Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.
+array = [
+
+]
+
+
+
+
 
 console.log()
 

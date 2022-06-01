@@ -247,12 +247,25 @@
   //TODO: Get a pokemon from the API using fetch. Add it to the page.
 
   //https://pokeapi.co/docs/v2#pokemon
-  const pokemonAPI = "https://pokeapi.co/api/v2/pokemon/"
+  const pokemonAPI = "https://pokeapi.co/api/v2/pokemon"
 
-  const getSinglePokemon =
-          fetch(pokemonAPI + "clefairy")
-                  .then((res) => res.json())
-                  .then((res) => createPokemon(res));
+  // const getSinglePokemon =
+  //         fetch(pokemonAPI + "clefairy")
+  //                 .then((res) => res.json)
+  //                 .then((res) => createPokemon(res));
+
+
+  const pokemon =
+          fetch(pokemonAPI)
+                  .then(function (response) {
+                    console.log(response);
+                    return response.json();
+                  }).then(function(data) {
+                    console.log(data)
+
+          })
+
+
 
   const createPokemon = ({ name, sprites, stats}) => {
     document.getElementById("pokemon").innerHTML +=
@@ -280,10 +293,10 @@
 
   // Example: .forEach
 
-  // arrayOfPokemon.forEach((name) => {
-  //     name.then((res) => res.json())
-  //         .then(res => createPokemon(res))
-  // })
+  arrayOfPokemon.forEach((name) => {
+      name.then((res) => res.json())
+          .then(res => createPokemon(res))
+  })
 
   // Example: .race
 
@@ -300,21 +313,21 @@
 
   });
 
+  //
+  // // TODO: Demo DOM Interaction
+  //
+  // // Example: Show simple pokemon search
+  //
+  // $("#search").keyup((e) => {
+  //   console.log("e.target.value:", e.target.value);
+  //   if(e.key === "Enter") fetch(pokemonAPI + e.target.value)
+  //           .then(res => res.json())
+  //           .then(res => createPokemon(res))
+  //           .catch(res => alert("No results!"));
+  // })
 
-  // TODO: Demo DOM Interaction
 
-  // Example: Show simple pokemon search
-
-  $("#search").keyup((e) => {
-    console.log("e.target.value:", e.target.value);
-    if(e.key === "Enter") fetch(pokemonAPI + e.target.value)
-            .then(res => res.json())
-            .then(res => createPokemon(res))
-            .catch(res => alert("No results!"));
-  })
-
-
-  // TODO/CLASS: Add disney results to page!
+  // // TODO/CLASS: Add disney results to page!
   const disneyAPI = 'https://api.disneyapi.dev/characters';
   //DOCS: "https://disneyapi.dev/docs";
 
@@ -324,19 +337,34 @@
   // Add the results to the disney div.
   // Include at least the character name in the list item.
 
-    const createCharacter = (car) => {
-    }
+    // const createCharacter = (car) => {
+    // }
 
-      fetch(disneyAPI).then((res) => res.json())
-              .then(disney => console.log(disney))
+  //     fetch(disneyAPI).then((res) => res.json())
+  //             .then(disney => console.log(disney))
+  //
+  // const createCharacter = ({ name, imageUrl}) => {
+  //   document.getElementById("disney").innerHTML +=
+  //           `<li class="disney">
+  //             <h3>${name}</h3>
+  //             <img src="${imageUrl}">
+  //           </li>`;
+  // };
+  //
+  // fetch(disneyAPI).then(res => res.json()).then((res) => {
+  //   document.getElementById("disney").innerHTML = '<ul>'
+  //   res.data.forEach((char) => {
+  //     createCharacter(char);
+  //   });
+  //   document.getElementById("disney").innerHTML += '</ul>'
+  // });
 
 
 
 
-  // TODO/BONUS: Add previous and next page functionality to disney results
 
-  // TODO/BONUS: Take Bobs Burgers api and return what the most watched episode was.
-  const bobsBurgersApi = "https://bobsburgers-api.herokuapp.com/episodes"
+
+
 
 
 </script>
